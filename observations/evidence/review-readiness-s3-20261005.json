@@ -1,0 +1,30 @@
+{
+  "as_of": "2026-10-05 afternoon Australia/Sydney",
+  "ready": false,
+  "gaps": [
+    "Original GCS requirement unmet; destination substitution has no confirmed employer exception",
+    "baseline: blocked_schedule_s3_export_and_output_format",
+    "ui_journey: implemented_cli_auth_missing_manual_chrome_verified",
+    "schema-drop-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-rename-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-change-type: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-add-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-combined: manual_verified_scheduled_and_export_evidence_missing",
+    "semantic-cents: manual_verified_scheduled_and_export_evidence_missing",
+    "semantic-date-order: manual_verified_scheduled_and_export_evidence_missing",
+    "Demo video link missing or not complete"
+  ],
+  "python_checks_verified": 41,
+  "python_new_this_update": 4,
+  "node_checks_passed": 12,
+  "playwright_definitions_discovered": 6,
+  "retained_live_api_passes": 4,
+  "retained_public_browser_passes": 1,
+  "both_schedules_inactive": true,
+  "s3_temporary_permissions_restored": true,
+  "cloud_permission_expiry": "2026-10-05T07:30:00Z",
+  "ai_credits_remaining": 0,
+  "authenticated_cli_pass": false,
+  "s3_export_pass": false,
+  "published_or_sent": false
+}

@@ -1,0 +1,33 @@
+{
+  "Version": "redacted-evidence-id-001",
+  "Statement": [
+    {
+      "Sid": "AssessmentBucketMetadataOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:GetBucketLocation",
+        "s3:ListBucket"
+      ],
+      "Resource": "arn:aws:s3:::rhombus-assessment-example",
+      "Condition": {
+        "DateLessThan": {
+          "aws:CurrentTime": "2026-10-05T07:30:00Z"
+        }
+      }
+    },
+    {
+      "Sid": "ReadWriteOneSyntheticAssessmentOutputOnly",
+      "Effect": "Allow",
+      "Action": [
+        "s3:PutObject",
+        "s3:GetObject"
+      ],
+      "Resource": "arn:aws:s3:::rhombus-assessment-example/orders-clean.csv",
+      "Condition": {
+        "DateLessThan": {
+          "aws:CurrentTime": "2026-10-05T07:30:00Z"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "scenario": "schema-drop-column",
+  "trigger": "supervised_manual_browser",
+  "scheduled_acceptance": false,
+  "workflow_id": "0",
+  "source": {
+    "bucket": "rhombus-assessment-example",
+    "key": "input/orders.csv",
+    "version_id": "redacted-evidence-id-018",
+    "modified_utc": "2026-10-05T01:37:10Z",
+    "bytes": 494,
+    "uploaded_fixture_sha256": "ce15d21437d711eb389033fe0571f531c1db62e2b409653b9224d3f3b6a4a5a1",
+    "upload_result": "AWS console: 1 file succeeded; 0 failed",
+    "refresh_result": "Rhombus: S3 access refreshed; file listing 494 B",
+    "pre_run_preview": "Still displayed original email column after refresh and page reload. Preview freshness was not established."
+  },
+  "pipeline_before": {
+    "saved_version": "redacted-evidence-id-027",
+    "snapshot_name": "redacted-evidence-id-034",
+    "full_config_hash": null,
+    "transformations_changed_before_initial_run": false
+  },
+  "initial_run": {
+    "start_utc": "2026-10-05T01:38:06Z",
+    "end_utc": "2026-10-05T01:38:09Z",
+    "run_id": null,
+    "ui_warning": "orders_cleaned: No results found after applying this LLM transformation.",
+    "ui_error": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+    "contradictory_same_timestamp_log": "Pipeline execution completed successfully.",
+    "expanded_error": {
+      "kind": "pipeline_summary",
+      "status": "error",
+      "failure": {
+        "message": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+        "reason": "DataFrame should not be empty.",
+        "nodeId": "sort_node_1",
+        "nodeLabel": "orders_sorted",
+        "nodeRef": "sort_node_1"
+      },
+      "nodeId": "sort_node_1",
+      "nodeName": "orders_sorted"
+    },
+    "output_file": null,
+    "output_verified": false
+  },
+  "repair": {
+    "initial_attempt": "Delayed request did not independently verify the guard; see delayed-chatbot-20261005.md.",
+    "latest_attempt": {
+      "source_version_id": "redacted-evidence-id-008",
+      "uploaded_utc": "2026-10-05T02:21:41Z",
+      "start_utc": "2026-10-05T02:22:01Z",
+      "end_utc": "2026-10-05T02:22:03Z",
+      "status": "explicit_missing_email_guard_verified",
+      "error_node": "orders_cleaned",
+      "code_sha_as_displayed": "redacted-evidence-id-005",
+      "error": "Schema error: required column(s) missing from input: ['email']. Pipeline cannot proceed without the full 6-column schema (order_id, customer_name, email, amount, order_date, country). Missing: ['email']",
+      "contradictory_success_log": true,
+      "data_recovery": false,
+      "run_id": null,
+      "actual_output_file": null
+    },
+    "snapshot": "redacted-evidence-id-037/redacted-evidence-id-009",
+    "scope": "Clear rejection verified, not successful data recovery or scheduled recovery."
+  }
+}

@@ -1,0 +1,287 @@
+{
+  "scenario": "baseline",
+  "scope": "file validation; cloud provenance is verified separately",
+  "passed": false,
+  "source": {
+    "file": "artifacts\\baseline\\source\\input.csv",
+    "sha256": "d5f9f82943409090cd1fb3382d6f4aef32e8bb94c4848aa77f152e432f487c41",
+    "rows": 12
+  },
+  "reference_sha256": "e3c658fb950f660f4708c18368dc84cbfaf7e75da71cc6968bdac7577d7de020",
+  "outputs": [
+    {
+      "file": "artifacts\\baseline\\manual-20261005\\output.csv",
+      "sha256": "77ebc0ac020e77086b0eaa758f25131a6db0f03534010512994b670a39adaeeb",
+      "rows": 6
+    }
+  ],
+  "oracle": {
+    "accepted": 6,
+    "rejected": [
+      {
+        "line": 7,
+        "order_id": "O1005",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 8,
+        "order_id": "O1006",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 9,
+        "order_id": "",
+        "reasons": [
+          "missing_order_id"
+        ]
+      },
+      {
+        "line": 10,
+        "order_id": "O1007",
+        "reasons": [
+          "invalid_date"
+        ]
+      },
+      {
+        "line": 11,
+        "order_id": "O1008",
+        "reasons": [
+          "invalid_amount"
+        ]
+      }
+    ],
+    "duplicates": [
+      {
+        "line": 4,
+        "order_id": "O1002"
+      }
+    ],
+    "missing_columns": []
+  },
+  "semantic_signals": [],
+  "checks": [
+    {
+      "check": "source_fixture_identity",
+      "passed": true,
+      "note": "Actual S3 snapshot must match the named controlled experiment."
+    },
+    {
+      "check": "source_schema",
+      "passed": true,
+      "expected": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ],
+      "actual": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ]
+    },
+    {
+      "check": "output_1.schema",
+      "passed": true,
+      "expected": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ],
+      "actual": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ]
+    },
+    {
+      "check": "output_1.row_count",
+      "passed": true,
+      "expected": 6,
+      "actual": 6
+    },
+    {
+      "check": "output_1.unique_ids",
+      "passed": true
+    },
+    {
+      "check": "output_1.sorted_ids",
+      "passed": true
+    },
+    {
+      "check": "output_1.business_correctness",
+      "passed": false,
+      "missing_rows": [
+        [
+          "O1001",
+          "Alice Example",
+          "alice@example.com",
+          "120.00",
+          "2026-09-01",
+          "AU"
+        ],
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "25.50",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "75.00",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "12.30",
+          "2026-09-06",
+          "AU"
+        ]
+      ],
+      "unexpected_rows": [
+        [
+          "O1001",
+          "Alice Example",
+          "alice@example.com",
+          "120.0",
+          "2026-09-01",
+          "AU"
+        ],
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "25.5",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "75.0",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "12.3",
+          "2026-09-06",
+          "AU"
+        ]
+      ]
+    },
+    {
+      "check": "output_1.cleaning_rules",
+      "passed": false,
+      "missing_rows": [
+        [
+          "O1001",
+          "Alice Example",
+          "alice@example.com",
+          "120.00",
+          "2026-09-01",
+          "AU"
+        ],
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "25.50",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "75.00",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "12.30",
+          "2026-09-06",
+          "AU"
+        ]
+      ],
+      "unexpected_rows": [
+        [
+          "O1001",
+          "Alice Example",
+          "alice@example.com",
+          "120.0",
+          "2026-09-01",
+          "AU"
+        ],
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "25.5",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "75.0",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "12.3",
+          "2026-09-06",
+          "AU"
+        ]
+      ]
+    },
+    {
+      "check": "outputs_present",
+      "passed": true,
+      "actual": 1
+    },
+    {
+      "check": "determinism_sample_count",
+      "passed": false,
+      "required": 3,
+      "actual": 1
+    },
+    {
+      "check": "determinism_content",
+      "passed": false,
+      "note": "Need at least two valid output CSVs; use three independent runs."
+    }
+  ]
+}

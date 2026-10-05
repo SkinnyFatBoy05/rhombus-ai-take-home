@@ -1,0 +1,13 @@
+order_id,customer_name,email,amount,order_date,country
+ o1001 , Alice Example , ALICE@EXAMPLE.COM ,12000.00,09/01/2026, au 
+O1002,Bob Example,,2550.00,09/02/2026,us
+O1002,Bob Example,,2550.00,09/02/2026,us
+O1003,Cara Example,CARA@EXAMPLE.COM,999.00,09/03/2026,AU
+O1004,,dee@example.com,7500.00,09/04/2026,nz
+O1005,Dan Example,dan@example.com,oops,09/04/2026,AU
+O1006,Eva Example,eva@example.com,-400.00,09/04/2026,AU
+,No ID,no-id@example.com,500.00,09/04/2026,US
+O1007,Fay Example,fay@example.com,1500.00,02/30/2026,US
+O1008,Gus Example,gus@example.com,0.00,09/05/2026,AU
+O1009,Hal Example,hal@example.com,49995.00,09/05/2026,US
+O1010,Ivy Example,ivy@example.com,1230.00,09/06/2026,AU

@@ -1,0 +1,13 @@
+order_id,customer_name,total_amount,order_date,country,campaign
+ o1001 , Alice Example ,USD 120.00,09/01/2026, au ,spring-2026
+O1002,Bob Example,USD 25.50,09/02/2026,us,spring-2026
+O1002,Bob Example,USD 25.50,09/02/2026,us,spring-2026
+O1003,Cara Example,USD 9.99,09/03/2026,AU,spring-2026
+O1004,,USD 75.00,09/04/2026,nz,spring-2026
+O1005,Dan Example,oops,09/04/2026,AU,spring-2026
+O1006,Eva Example,USD -4.00,09/04/2026,AU,spring-2026
+,No ID,USD 5.00,09/04/2026,US,spring-2026
+O1007,Fay Example,USD 15.00,02/30/2026,US,spring-2026
+O1008,Gus Example,USD 0.00,09/05/2026,AU,spring-2026
+O1009,Hal Example,USD 499.95,09/05/2026,US,spring-2026
+O1010,Ivy Example,USD 12.30,09/06/2026,AU,spring-2026

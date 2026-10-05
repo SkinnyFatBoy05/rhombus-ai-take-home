@@ -1,0 +1,13 @@
+order_id,customer_name,amount,order_date,country
+ o1001 , Alice Example , $120.00 ,09/01/2026, au 
+O1002,Bob Example,25.50,09/02/2026,us
+O1002,Bob Example,25.50,09/02/2026,us
+O1003,Cara Example,9.99,09/03/2026,AU
+O1004,,$75.00,09/04/2026,nz
+O1005,Dan Example,oops,09/04/2026,AU
+O1006,Eva Example,-4.00,09/04/2026,AU
+,No ID,5.00,09/04/2026,US
+O1007,Fay Example,15.00,02/30/2026,US
+O1008,Gus Example,0.00,09/05/2026,AU
+O1009,Hal Example,499.95,09/05/2026,US
+O1010,Ivy Example,12.30,09/06/2026,AU

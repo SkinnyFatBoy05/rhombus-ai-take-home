@@ -1,0 +1,23 @@
+{
+  "observed_date": "2026-10-05",
+  "evidence_type": "actual_downloaded_workspace_artifact",
+  "filename": "baseline-workspace-c8716e74.csv",
+  "downloaded_from": "https://rhombusai.com/workflow/0",
+  "workspace_path_displayed": "workspace/baseline-actual-sorted-c8716e74.csv",
+  "download_local_modified_sydney": "2026-10-05T15:28:19+11:00",
+  "bytes": 382,
+  "sha256": "77ebc0ac020e77086b0eaa758f25131a6db0f03534010512994b670a39adaeeb",
+  "method": "Clicked Workspace artifact Download in signed-in Chrome; browser event timed out but the actual 382-byte file arrived in Downloads and was copied unchanged.",
+  "source_node_reported_by_platform_assistant": "orders_sorted",
+  "pipeline_job_reported_by_platform_assistant": "redacted-evidence-id-028",
+  "materialization_job_reported_by_platform_assistant": "redacted-evidence-id-006",
+  "assistant_access_mode": "local_materialized",
+  "run_attribution_independently_verified": false,
+  "source_version_attribution_verified": false,
+  "scheduled_run_verified": false,
+  "s3_export_verified": false,
+  "independent_repeated_run_determinism_verified": false,
+  "comparison": "Byte-identical to the earlier captured baseline-manual-20261005.csv. Cache/materialization provenance cannot establish an independent repeated pipeline run.",
+  "validation": "baseline-workspace-c8716e74-validation.json",
+  "findings": "Six numerically correct records; four amounts lack two decimal places; required repeated-run coverage absent."
+}

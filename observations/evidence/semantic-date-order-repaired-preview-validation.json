@@ -1,0 +1,34 @@
+{
+  "scenario": "semantic-date-order",
+  "scope": "Rendered output-node preview only; supplementary evidence",
+  "business_preview_passed": true,
+  "csv_bytes_verified": false,
+  "scheduled_run_verified": false,
+  "determinism_verified": false,
+  "checks": [
+    {
+      "check": "preview_schema",
+      "passed": true
+    },
+    {
+      "check": "preview_row_count",
+      "passed": true,
+      "expected": 6,
+      "actual": 6
+    },
+    {
+      "check": "preview_unique_ids",
+      "passed": true
+    },
+    {
+      "check": "preview_sorted_ids",
+      "passed": true
+    },
+    {
+      "check": "preview_business_values",
+      "passed": true,
+      "missing_rows": [],
+      "unexpected_rows": []
+    }
+  ]
+}

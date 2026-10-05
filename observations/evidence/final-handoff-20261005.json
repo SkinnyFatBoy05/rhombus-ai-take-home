@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-05",
+  "workflow_id": "0",
+  "original_pipeline_restored": "redacted-evidence-id-034/redacted-evidence-id-027",
+  "restored_source": {
+    "key": "input/orders.csv",
+    "version_id": "redacted-evidence-id-038",
+    "uploaded_utc": "2026-10-05T02:26:07Z",
+    "bytes": 669,
+    "uploaded_fixture_sha256": "d5f9f82943409090cd1fb3382d6f4aef32e8bb94c4848aa77f152e432f487c41",
+    "verification_scope": "Local staged bytes hash plus AWS console upload/version listing; this new version was not separately downloaded."
+  },
+  "final_manual_control": {
+    "start_utc": "2026-10-05T02:26:45Z",
+    "end_utc": "2026-10-05T02:26:48Z",
+    "logs": [
+      "Pipeline execution completed successfully.",
+      "Pipeline completed successfully",
+      "Applied 2 transformations; 6 rows affected, 36 cells modified; sort order_id ascending"
+    ],
+    "preview": "Fresh page reload, output-node eye: six correct reference records, amounts Numeric.",
+    "run_id": null,
+    "actual_output_file": null
+  },
+  "schedules": [
+    {
+      "recurrence": "Custom */5 * * * *",
+      "status": "Inactive",
+      "aria_checked": false
+    },
+    {
+      "recurrence": "Hourly at minute 22",
+      "status": "Inactive",
+      "aria_checked": false
+    }
+  ],
+  "screenshot": "both-schedules-inactive-20261005.jpg",
+  "screenshot_scope": "Unaltered compact crop of the two Inactive badges from the schedule panel; recurrence/control states recorded above.",
+  "credits_displayed": "5/50",
+  "preserved_repair_snapshots": {
+    "cents": "redacted-evidence-id-035/redacted-evidence-id-022",
+    "date": "redacted-evidence-id-036/redacted-evidence-id-003",
+    "schema": "redacted-evidence-id-037/redacted-evidence-id-009"
+  },
+  "rhombus_s3_policy_expires_utc": "2026-10-05T03:00:00Z",
+  "cost_limit": "A$5 project total; US$1 tracking budget is not a hard cap; no new services/keys.",
+  "gcs_used": false,
+  "published_or_sent": false
+}

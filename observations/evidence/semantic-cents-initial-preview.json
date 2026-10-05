@@ -1,0 +1,12 @@
+{
+  "scenario": "semantic-cents",
+  "capture_method": "Observed Chrome output-node Preview table after manual run 2026-10-05 01:58:05–01:58:09 UTC",
+  "source_version_id": "redacted-evidence-id-032",
+  "columns": ["order_id", "customer_name", "email", "amount", "order_date", "country"],
+  "rows": [
+    {"order_id":"O1002","customer_name":"Bob Example","email":"unknown@example.com","amount":"2550","order_date":"2026-09-02","country":"US"},
+    {"order_id":"O1003","customer_name":"Cara Example","email":"cara@example.com","amount":"999","order_date":"2026-09-03","country":"AU"},
+    {"order_id":"O1004","customer_name":"Unknown","email":"dee@example.com","amount":"7500","order_date":"2026-09-04","country":"NZ"},
+    {"order_id":"O1010","customer_name":"Ivy Example","email":"ivy@example.com","amount":"1230","order_date":"2026-09-06","country":"AU"}
+  ]
+}

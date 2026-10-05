@@ -1,0 +1,11 @@
+{
+  "observed_date": "2026-10-05",
+  "timezone": "Australia/Sydney",
+  "site": "https://rhombusai.com/redeem",
+  "candidate_authorized": true,
+  "result": "Redemption Successful! Your credits have been added to your account.",
+  "new_balance": 5000,
+  "paid_upgrade": false,
+  "voucher_value": "omitted from submission",
+  "credit_blocker_resolved": true
+}

@@ -1,0 +1,112 @@
+[
+  [
+    "Rhombus AI take-home",
+    "Evidence walkthrough | 5 October 2026",
+    [
+      "Software Engineer: LLM Observability and Quality Assurance",
+      "Seven live manual drift cases, AI repairs and independent validation.",
+      "Captioned evidence slides. This is not a recording of a passing end-to-end test.",
+      "Live acceptance remains incomplete; limitations are shown explicitly."
+    ],
+    "README.md | docs/requirements.md"
+  ],
+  [
+    "Workflow and scope",
+    "S3 source → AI-built cleaning → configured output",
+    [
+      "Twelve messy synthetic orders; six intended cleaned records.",
+      "One versioned S3 key is replaced for each controlled fixture.",
+      "All platform transformations and repairs were made through the AI builder.",
+      "GCS was excluded. Local CSV and the later S3 alternative lack an employer exception."
+    ],
+    "datasets/manifest.json | docs/cloud-setup.md"
+  ],
+  [
+    "Automation and checks",
+    "Real assertions; incomplete authentication is visible",
+    [
+      "41 Python checks: 37 retained checks plus 4 new S3 freshness checks.",
+      "12 Node checks, 1 public browser test and 4 direct API tests passed.",
+      "API checks assert HTTP 401 and response content on three observed endpoints.",
+      "The authenticated Playwright journey is implemented but has not passed live."
+    ],
+    "npm test | npm run test:api | observations/evidence/local-verification.md"
+  ],
+  [
+    "Structural drift",
+    "Five schema experiments",
+    [
+      "Drop email, rename amount, add a USD prefix, add campaign, combine changes.",
+      "Four initial cases failed with an empty dataset at the downstream sort step.",
+      "Extra campaign was ignored while preserving the six expected records.",
+      "AI schema adapters recovered rename/type cases; missing email now has an explicit error."
+    ],
+    "observations/evidence/manual-drift-matrix-20261005.json"
+  ],
+  [
+    "Silent monetary corruption",
+    "Pipeline success did not imply correct business data",
+    [
+      "Cents entered as dollars: 25.50 became 2550; only four records survived.",
+      "The defect reproduced after restoring the original saved pipeline.",
+      "AI repair: Decimal cents ÷ 100 before dollar range and precision checks.",
+      "A fresh output preview then matched all six intended records and amounts."
+    ],
+    "semantic-cents-confirmation-preview.json | semantic-cents-repaired-preview-validation.json"
+  ],
+  [
+    "Silent date corruption",
+    "September 1 became January 9",
+    [
+      "DD/MM source values were interpreted under the original MM/DD contract.",
+      "All six dates changed meaning while the pipeline reported success.",
+      "An explicit fixture-specific date repair restored September 1–6.",
+      "This is verified for the controlled fixture, not a general date-format detector."
+    ],
+    "semantic-date-order-confirmation-preview.json | semantic-date-order-repaired-preview-validation.json"
+  ],
+  [
+    "Observability findings",
+    "Status and freshness need independent checks",
+    [
+      "Failed runs also logged “Pipeline execution completed successfully.”",
+      "Schedule countdowns produced no attributable execution-history records.",
+      "The output preview sometimes retained earlier data until a full reload.",
+      "A stopped chatbot request continued in the background; affected cases were repeated."
+    ],
+    "observations/scheduling-blocker.md | observations/evidence/delayed-chatbot-20261005.md"
+  ],
+  [
+    "Validation boundaries",
+    "Preview values are not downloaded CSV bytes",
+    [
+      "Baseline CSV and a downloaded Workspace copy have six correct numeric records.",
+      "Four amounts lose required trailing zeros; strict file validation fails.",
+      "Preview validation independently catches missing rows, wrong amounts and dates.",
+      "Repeated scheduled exports and run-to-file provenance remain unverified."
+    ],
+    "python data-validation/validate_preview.py EVIDENCE.json --report REPORT.json"
+  ],
+  [
+    "S3 output continuation",
+    "Connected destination; actual export still fails",
+    [
+      "A scoped, time-limited AWS identity connected the S3 destination.",
+      "The connection probe succeeded; actual CSV export failed even in a temporary test.",
+      "Single-file permission was restored. Both schedules are inactive.",
+      "Voucher restored 5,000 credits; export still fails. No paid upgrade or GCS use."
+    ],
+    "observations/evidence/s3-destination-diagnostic-20261005.json"
+  ],
+  [
+    "Submission status",
+    "Public repository; submission email remains unsent",
+    [
+      "Still needed: scheduled evidence, authenticated CLI execution and repeated CSV exports.",
+      "GCS substitution remains unapproved; live acceptance gaps are disclosed in README.",
+      "Intended GitHub owner: skinnyfatboy05. Deadline: 6 October 2026.",
+      "Required subject: Rhombus AI – Take-Home Exercise. Review readiness before submitting."
+    ],
+    "python scripts/readiness.py | docs/github-submission-checklist.md"
+  ]
+]

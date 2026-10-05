@@ -1,0 +1,120 @@
+{
+  "cloud_requirement": {
+    "status": "deviation",
+    "destination_provider": "s3",
+    "requested_destination_provider": "s3",
+    "s3_setup_status": "destination_connected_single_object_policy_applied_export_failed",
+    "employer_exception_confirmed": false,
+    "evidence": [
+      "docs/cloud-setup.md",
+      "observations/evidence/aws-output-setup-20261005.json",
+      "observations/evidence/s3-destination-diagnostic-20261005.json"
+    ]
+  },
+  "baseline": {
+    "status": "blocked_schedule_s3_export_and_output_format",
+    "evidence": [
+      "observations/baseline-build.md",
+      "observations/scheduling-blocker.md",
+      "observations/evidence/baseline-source.json",
+      "observations/evidence/baseline-validation.json",
+      "observations/evidence/recheck-2026-10-05.md",
+      "observations/evidence/baseline-manual-20261005.csv",
+      "observations/evidence/baseline-manual-20261005-validation.json",
+      "observations/evidence/continuation-2026-10-05.md",
+      "observations/evidence/final-handoff-20261005.json",
+      "observations/s3-output.md",
+      "observations/evidence/baseline-workspace-c8716e74.csv",
+      "observations/evidence/baseline-workspace-c8716e74-provenance.json",
+      "observations/evidence/baseline-workspace-c8716e74-validation.json"
+    ]
+  },
+  "ui_journey": {
+    "status": "implemented_cli_auth_missing_manual_chrome_verified",
+    "evidence": [
+      "observations/evidence/ui-controls.md",
+      "observations/evidence/local-verification.md",
+      "observations/evidence/continuation-2026-10-05.md",
+      "observations/s3-output.md"
+    ]
+  },
+  "api_tests": {
+    "status": "complete",
+    "evidence": [
+      "observations/evidence/api-discovery.md",
+      "observations/evidence/local-verification.md"
+    ]
+  },
+  "demo": {
+    "status": "complete",
+    "url": "https://raw.githubusercontent.com/SkinnyFatBoy05/rhombus-ai-take-home/refs/heads/codex/submission/demo/rhombus-evidence-walkthrough.mp4",
+    "path": "demo/rhombus-evidence-walkthrough.mp4",
+    "duration_seconds": 159.96,
+    "format": "Captioned evidence slides, not live screen recording",
+    "full_decode_verified": true
+  },
+  "drift_cases": {
+    "schema-drop-column": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/schema-drop-column.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "schema-rename-column": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/schema-rename-column.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "schema-change-type": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/schema-change-type.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "schema-add-column": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/schema-add-column.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "schema-combined": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/schema-combined.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "semantic-cents": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/semantic-cents.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    },
+    "semantic-date-order": {
+      "status": "manual_verified_scheduled_and_export_evidence_missing",
+      "evidence": [
+        "observations/semantic-date-order.md",
+        "observations/evidence/manual-drift-matrix-20261005.json",
+        "observations/scheduling-blocker.md"
+      ]
+    }
+  },
+  "publication": {
+    "repository": "https://github.com/SkinnyFatBoy05/rhombus-ai-take-home",
+    "visibility": "public",
+    "candidate_authorized": true,
+    "email_sent": false
+  }
+}

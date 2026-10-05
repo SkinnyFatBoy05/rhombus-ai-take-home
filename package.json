@@ -1,0 +1,19 @@
+{
+  "name": "rhombus-ai-take-home",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Rhombus AI scheduled ETL assessment: browser/API tests, drift datasets and independent data validation",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "test:data": "python -m unittest discover -s tests -p test_*.py -v",
+    "test:ui": "node scripts/check-ui-setup.mjs && playwright test --project=ui",
+    "test:api": "playwright test --project=api",
+    "test:smoke": "playwright test --project=public-smoke",
+    "test:list": "playwright test --list",
+    "capture": "node scripts/capture.mjs",
+    "readiness": "python scripts/readiness.py"
+  },
+  "devDependencies": { "@playwright/test": "1.58.2" }
+}

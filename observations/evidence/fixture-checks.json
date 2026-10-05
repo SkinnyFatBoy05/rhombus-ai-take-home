@@ -1,0 +1,434 @@
+{
+  "scope": "Offline fixture validation only; no drift fixture has been injected into Rhombus.",
+  "cases": {
+    "baseline": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "d5f9f82943409090cd1fb3382d6f4aef32e8bb94c4848aa77f152e432f487c41",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": true,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": 6,
+      "missing_columns": [],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "schema-drop-column": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "ce15d21437d711eb389033fe0571f531c1db62e2b409653b9224d3f3b6a4a5a1",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": false,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "amount",
+            "order_date",
+            "country"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": null,
+      "missing_columns": [
+        "email"
+      ],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "schema-rename-column": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "e539b75e72fdf7d64d55cb9d21b3432224a1d60f4bb77ec3656f822120c0234a",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": false,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "total_amount",
+            "order_date",
+            "country"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": null,
+      "missing_columns": [
+        "amount"
+      ],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "schema-change-type": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "d50fd4e8414289a7fe96641b313abaa3b57232677528e2462848b4a140d9e96f",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": true,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": 0,
+      "missing_columns": [],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "schema-add-column": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "7b099fb6ebf6569337031db6a430803c731f774e36d109319e096bc49acb0678",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": false,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country",
+            "campaign"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": 6,
+      "missing_columns": [],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "schema-combined": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "171f5cd68c9109c1d89a6cbb2101b1685f37882780b196319dc0275fbb645812",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": false,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "total_amount",
+            "order_date",
+            "country",
+            "campaign"
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": null,
+      "missing_columns": [
+        "amount",
+        "email"
+      ],
+      "semantic_signals": [],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "semantic-cents": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "6677bbd1818847c91ec956b56ebc6bfcf26c1c895820aab1fdd86a51b060742b",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": true,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ]
+        },
+        {
+          "check": "semantic_input_detection",
+          "passed": true,
+          "signals": [
+            {
+              "order_id": "O1001",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1002",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1002",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1003",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1004",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1009",
+              "signal": "amount_100x"
+            },
+            {
+              "order_id": "O1010",
+              "signal": "amount_100x"
+            }
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": 4,
+      "missing_columns": [],
+      "semantic_signals": [
+        {
+          "order_id": "O1001",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1002",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1002",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1003",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1004",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1009",
+          "signal": "amount_100x"
+        },
+        {
+          "order_id": "O1010",
+          "signal": "amount_100x"
+        }
+      ],
+      "output_validated": false,
+      "determinism_established": false
+    },
+    "semantic-date-order": {
+      "evidence_type": "local_fixture_only_not_a_platform_run",
+      "rows": 12,
+      "sha256": "9e5598ac83459492a195c305cb9c18e42939a8c7e8283d2b004e613f8e80f3de",
+      "input_checks": [
+        {
+          "check": "source_fixture_identity",
+          "passed": true,
+          "note": "Actual S3 snapshot must match the named controlled experiment."
+        },
+        {
+          "check": "source_schema",
+          "passed": true,
+          "expected": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ],
+          "actual": [
+            "order_id",
+            "customer_name",
+            "email",
+            "amount",
+            "order_date",
+            "country"
+          ]
+        },
+        {
+          "check": "semantic_input_detection",
+          "passed": true,
+          "signals": [
+            {
+              "order_id": "O1001",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1002",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1002",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1003",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1004",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1009",
+              "signal": "date_order_swapped"
+            },
+            {
+              "order_id": "O1010",
+              "signal": "date_order_swapped"
+            }
+          ]
+        }
+      ],
+      "baseline_oracle_accepted": 6,
+      "missing_columns": [],
+      "semantic_signals": [
+        {
+          "order_id": "O1001",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1002",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1002",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1003",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1004",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1009",
+          "signal": "date_order_swapped"
+        },
+        {
+          "order_id": "O1010",
+          "signal": "date_order_swapped"
+        }
+      ],
+      "output_validated": false,
+      "determinism_established": false
+    }
+  }
+}

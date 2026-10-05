@@ -1,0 +1,220 @@
+{
+  "scope": "Supplementary supervised manual runs in signed-in Chrome; not authenticated CLI or scheduled acceptance",
+  "workflow_id": "0",
+  "source_key": "input/orders.csv",
+  "baseline_pipeline_version": "redacted-evidence-id-027",
+  "full_configuration_export_available": false,
+  "runs": [
+    {
+      "scenario": "schema-drop-column",
+      "version_id": "redacted-evidence-id-018",
+      "uploaded_utc": "2026-10-05T01:37:10Z",
+      "source_bytes": 494,
+      "start_utc": "2026-10-05T01:38:06Z",
+      "end_utc": "2026-10-05T01:38:09Z",
+      "observed_status": "failed",
+      "error": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+      "contradictory_success_log": true,
+      "actual_output_file": null,
+      "repair": "AI added a required-column guard, but verification stayed at Starting pipeline run from 01:39:52 UTC for over ten minutes. Stopped the run and chatbot, then restored redacted-evidence-id-034. No explicit schema-error result was verified."
+    },
+    {
+      "scenario": "schema-rename-column",
+      "version_id": "redacted-evidence-id-033",
+      "uploaded_utc": "2026-10-05T01:50:48Z",
+      "source_bytes": 675,
+      "start_utc": "2026-10-05T01:51:20Z",
+      "end_utc": "2026-10-05T01:51:24Z",
+      "observed_status": "failed",
+      "input_read_evidence": "Post-run input preview: 12 rows with total_amount replacing amount.",
+      "error": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+      "contradictory_success_log": true,
+      "actual_output_file": null,
+      "repair": "Not yet attempted"
+    },
+    {
+      "scenario": "schema-change-type",
+      "version_id": "redacted-evidence-id-013",
+      "uploaded_utc": "2026-10-05T01:52:43Z",
+      "source_bytes": 709,
+      "start_utc": "2026-10-05T01:52:58Z",
+      "end_utc": "2026-10-05T01:53:00Z",
+      "observed_status": "failed",
+      "input_read_evidence": "After run and page reload, input preview showed amount values USD 120.00, USD 25.50 and USD 9.99. Prior in-page preview had retained the renamed-column input.",
+      "error": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+      "contradictory_success_log": true,
+      "actual_output_file": null,
+      "repair": "Not yet attempted"
+    },
+    {
+      "scenario": "schema-add-column",
+      "version_id": "redacted-evidence-id-012",
+      "uploaded_utc": "2026-10-05T01:54:13Z",
+      "source_bytes": 822,
+      "start_utc": "2026-10-05T01:54:44Z",
+      "end_utc": "2026-10-05T01:54:46Z",
+      "observed_status": "completed",
+      "input_read_evidence": "Reloaded post-run input shows campaign=spring-2026 as a seventh column.",
+      "preview_result": "Six baseline business records, sorted; six output columns, campaign excluded. Amount displayed as Numeric.",
+      "actual_output_file": null,
+      "download_result": "No captured download in ten seconds; serialized bytes remain unvalidated.",
+      "repair": "Not indicated by displayed business data"
+    },
+    {
+      "scenario": "schema-combined",
+      "version_id": "redacted-evidence-id-016",
+      "uploaded_utc": "2026-10-05T01:56:04Z",
+      "source_bytes": 693,
+      "start_utc": "2026-10-05T01:56:25Z",
+      "end_utc": "2026-10-05T01:56:28Z",
+      "observed_status": "failed",
+      "input_read_evidence": "Reloaded post-run input shows no email, total_amount with USD prefixes, and campaign=spring-2026.",
+      "error": "Pipeline failed at orders_sorted: DataFrame should not be empty.",
+      "contradictory_success_log": true,
+      "actual_output_file": null,
+      "repair": "Not yet attempted"
+    },
+    {
+      "scenario": "semantic-cents",
+      "version_id": "redacted-evidence-id-032",
+      "uploaded_utc": "2026-10-05T01:57:05Z",
+      "source_bytes": 685,
+      "start_utc": "2026-10-05T01:58:05Z",
+      "end_utc": "2026-10-05T01:58:09Z",
+      "observed_status": "completed_with_wrong_business_values",
+      "input_read_evidence": "Reloaded preview shows amount=12000.00,2550.00,999.00 for first three distinct orders.",
+      "actual_output_file": null,
+      "preview_file": "semantic-cents-initial-preview.json",
+      "repair": "Request rejected: previous request still running; credit counter 25 to 20. No cents correction applied."
+    },
+    {
+      "scenario": "semantic-date-order",
+      "version_id": "redacted-evidence-id-010",
+      "uploaded_utc": "2026-10-05T02:00:22Z",
+      "source_bytes": 669,
+      "start_utc": "2026-10-05T02:00:49Z",
+      "end_utc": "2026-10-05T02:00:52Z",
+      "observed_status": "completed_with_wrong_business_values",
+      "preview_result": "Six rows, dates 2026-01-09 through 2026-06-09 instead of September 1 through 6.",
+      "actual_output_file": null,
+      "repair": "Not yet attempted"
+    }
+  ],
+  "configuration_caveat": "The first chatbot repair continued server-side after both UI stop controls. Its delayed 21m41s response reported further patches/runs; the initial cents/date observations may overlap that work. Repeat semantic results after explicit baseline restoration are recorded separately.",
+  "confirmed_repeats": [
+    {
+      "scenario": "semantic-cents",
+      "version_id": "redacted-evidence-id-014",
+      "uploaded_utc": "2026-10-05T02:04:20Z",
+      "start_utc": "2026-10-05T02:04:47Z",
+      "end_utc": "2026-10-05T02:04:49Z",
+      "configuration": "redacted-evidence-id-034/redacted-evidence-id-027 restored immediately before test; prior chatbot response completed; no new AI request until after capture",
+      "observed_status": "completed_with_wrong_business_values",
+      "preview_result": "Same four rows and inflated amounts as semantic-cents-initial-preview.json",
+      "actual_output_file": null
+    },
+    {
+      "scenario": "semantic-date-order",
+      "version_id": "redacted-evidence-id-031",
+      "uploaded_utc": "2026-10-05T02:08:03Z",
+      "start_utc": "2026-10-05T02:08:31Z",
+      "end_utc": "2026-10-05T02:08:33Z",
+      "configuration": "Original redacted-evidence-id-034 restored after the cents repair completed; no AI request during this initial date repeat.",
+      "observed_status": "completed_with_wrong_business_values",
+      "preview_result": "After full reload, six dates are Jan 9 through Jun 9; same as initial date preview. Before reload the panel retained the previous cents-repaired output with correct September dates.",
+      "actual_output_file": null
+    }
+  ],
+  "schema_guard_verification": {
+    "version_id": "redacted-evidence-id-029",
+    "uploaded_utc": "2026-10-05T02:02:46Z",
+    "start_utc": "2026-10-05T02:03:06Z",
+    "end_utc": "2026-10-05T02:03:09Z",
+    "observed_result": "Still failed at orders_sorted: DataFrame should not be empty. No explicit missing-email error observed.",
+    "repair_verified": false,
+    "contradictory_success_log": true
+  },
+  "cents_repair": {
+    "status": "business_preview_verified",
+    "source_version_id": "redacted-evidence-id-014",
+    "saved_version": "redacted-evidence-id-022",
+    "snapshot_name": "redacted-evidence-id-035",
+    "saved_at_utc": "2026-10-05T02:07:44Z",
+    "change": "AI directly patched executable code to divide Decimal cents by 100 before dollar validation.",
+    "verification": "Reloaded the page after chat completion; output-node preview showed all six reference records and correct numeric dollar amounts.",
+    "csv_bytes_verified": false,
+    "scheduled_recovery_verified": false,
+    "reported_job_id_unverified": "redacted-evidence-id-007",
+    "note": "Job ID is transcribed exactly from chatbot response and is not independent execution provenance."
+  },
+  "date_repair": {
+    "status": "business_preview_verified",
+    "source_version_id": "redacted-evidence-id-031",
+    "saved_version": "redacted-evidence-id-003",
+    "snapshot_name": "redacted-evidence-id-036",
+    "saved_at_utc": "2026-10-05T02:11:49Z",
+    "change": "AI patched executable code for the declared DD/MM fixture; swaps month/day in connector-inferred ISO dates and parses raw DD/MM strings.",
+    "verification": "After a full reload, output-node Preview shows six reference records, September 1-6, correct dollar amounts.",
+    "limitation": "Verified on this controlled ambiguous-date fixture only. The chatbot assumption that day>12 is always left as raw text is not tested; this is not a general safe date-format detector.",
+    "csv_bytes_verified": false,
+    "scheduled_recovery_verified": false,
+    "reported_job_id_unverified": "redacted-evidence-id-023"
+  },
+  "schema_adapter_repair": {
+    "saved_version": "redacted-evidence-id-009",
+    "snapshot_name": "redacted-evidence-id-037",
+    "saved_at_utc": "2026-10-05T02:14:17Z",
+    "changes": [
+      "Explicit total_amount alias when amount is absent",
+      "Reject alias collision",
+      "Strip declared USD prefix before dollar checks",
+      "Required-column guard before processing",
+      "Ignore extra fields in output"
+    ],
+    "reported_job_id_unverified": "redacted-evidence-id-030",
+    "rename": {
+      "source_version_id": "redacted-evidence-id-017",
+      "uploaded_utc": "2026-10-05T02:12:32Z",
+      "status": "business_preview_verified"
+    },
+    "type": {
+      "source_version_id": "redacted-evidence-id-015",
+      "uploaded_utc": "2026-10-05T02:14:45Z",
+      "start_utc": "2026-10-05T02:15:17Z",
+      "end_utc": "2026-10-05T02:15:21Z",
+      "status": "business_preview_verified"
+    },
+    "csv_bytes_verified": false,
+    "scheduled_recovery_verified": false,
+    "combined": {
+      "source_version_id": "redacted-evidence-id-020",
+      "uploaded_utc": "2026-10-05T02:17:20Z",
+      "start_utc": "2026-10-05T02:18:40Z",
+      "end_utc": "2026-10-05T02:18:42Z",
+      "status": "explicit_missing_email_guard_verified",
+      "error_node": "orders_cleaned",
+      "code_sha_as_displayed": "redacted-evidence-id-005",
+      "error": "Schema error: required column(s) missing from input: ['email']. Pipeline cannot proceed without the full 6-column schema (order_id, customer_name, email, amount, order_date, country). Missing: ['email']",
+      "contradictory_success_log": true,
+      "data_recovery": false,
+      "run_id": null,
+      "actual_output_file": null
+    },
+    "drop": {
+      "source_version_id": "redacted-evidence-id-008",
+      "uploaded_utc": "2026-10-05T02:21:41Z",
+      "start_utc": "2026-10-05T02:22:01Z",
+      "end_utc": "2026-10-05T02:22:03Z",
+      "status": "explicit_missing_email_guard_verified",
+      "error_node": "orders_cleaned",
+      "code_sha_as_displayed": "redacted-evidence-id-005",
+      "error": "Schema error: required column(s) missing from input: ['email']. Pipeline cannot proceed without the full 6-column schema (order_id, customer_name, email, amount, order_date, country). Missing: ['email']",
+      "contradictory_success_log": true,
+      "data_recovery": false,
+      "run_id": null,
+      "actual_output_file": null
+    }
+  },
+  "initial_run_repair_notes_are_historical": true,
+  "latest_repair_results": "See cents_repair, date_repair and schema_adapter_repair below; initial run notes preserve chronology."
+}

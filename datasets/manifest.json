@@ -1,0 +1,106 @@
+{
+  "baseline": {
+    "description": "Messy original orders",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "d5f9f82943409090cd1fb3382d6f4aef32e8bb94c4848aa77f152e432f487c41"
+  },
+  "schema-drop-column": {
+    "description": "Remove email",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "ce15d21437d711eb389033fe0571f531c1db62e2b409653b9224d3f3b6a4a5a1"
+  },
+  "schema-rename-column": {
+    "description": "Rename amount to total_amount",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "total_amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "e539b75e72fdf7d64d55cb9d21b3432224a1d60f4bb77ec3656f822120c0234a"
+  },
+  "schema-change-type": {
+    "description": "Prefix all parseable amounts with USD ",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "d50fd4e8414289a7fe96641b313abaa3b57232677528e2462848b4a140d9e96f"
+  },
+  "schema-add-column": {
+    "description": "Add campaign with value spring-2026",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "amount",
+      "order_date",
+      "country",
+      "campaign"
+    ],
+    "sha256": "7b099fb6ebf6569337031db6a430803c731f774e36d109319e096bc49acb0678"
+  },
+  "schema-combined": {
+    "description": "Drop email, rename amount, prefix amounts with USD, add campaign",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "total_amount",
+      "order_date",
+      "country",
+      "campaign"
+    ],
+    "sha256": "171f5cd68c9109c1d89a6cbb2101b1685f37882780b196319dc0275fbb645812"
+  },
+  "semantic-cents": {
+    "description": "Multiply parseable amounts by 100; units change to cents",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "6677bbd1818847c91ec956b56ebc6bfcf26c1c895820aab1fdd86a51b060742b"
+  },
+  "semantic-date-order": {
+    "description": "Switch valid date values from MM/DD/YYYY to DD/MM/YYYY",
+    "rows": 12,
+    "columns": [
+      "order_id",
+      "customer_name",
+      "email",
+      "amount",
+      "order_date",
+      "country"
+    ],
+    "sha256": "9e5598ac83459492a195c305cb9c18e42939a8c7e8283d2b004e613f8e80f3de"
+  }
+}

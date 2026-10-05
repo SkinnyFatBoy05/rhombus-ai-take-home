@@ -1,0 +1,25 @@
+{
+  "observed_date": "2026-10-05",
+  "workflow": "https://rhombusai.com/workflow/0",
+  "voucher_redemption": "5000 credits added; code and account details omitted",
+  "credits_during_latest_schedule_trial": 4980,
+  "schedule_recurrence": "*/5 * * * *",
+  "trial_due_boundary_sydney": "2026-10-05T15:30:00+11:00",
+  "after_due_and_full_reload": "No results. Export CSV disabled. No execution IDs.",
+  "both_schedules_final": "inactive",
+  "failure_notifications": false,
+  "s3_root_objects_after_trial": [
+    "input/",
+    "output/",
+    "rhombus-ai-write-permission-test-file-redacted-evidence-id-024.tmp"
+  ],
+  "root_orders_clean_csv_present": false,
+  "export_scope": "GetObject/PutObject only orders-clean.csv, location/list of assessment bucket, expiry 2026-10-05T07:30:00Z",
+  "broader_read_write_proposal_applied": false,
+  "pipeline_output_node": "output_node_2",
+  "manual_export_result": "upstream completed, S3 output failed",
+  "google_cloud_used": false,
+  "paid_upgrade": false,
+  "published_or_sent": false,
+  "readiness": "incomplete live acceptance; locally reviewable package"
+}

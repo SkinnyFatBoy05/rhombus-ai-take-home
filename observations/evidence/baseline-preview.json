@@ -1,0 +1,22 @@
+{
+  "evidence_type": "visible_dom_preview",
+  "observed_date": "2026-09-30",
+  "project_path": "/workflow/0",
+  "node": "orders_cleaned",
+  "trigger": "manual AI-builder run",
+  "limitations": [
+    "Intermediate node preview, not a destination CSV export",
+    "No successful scheduled run or independent repetition yet",
+    "The browser download event timed out after choosing Download as CSV; no file was captured",
+    "Numeric display does not establish CSV decimal formatting"
+  ],
+  "columns": ["order_id", "customer_name", "email", "amount", "order_date", "country"],
+  "rows": [
+    ["O1001", "Alice Example", "alice@example.com", "120", "2026-09-01", "AU"],
+    ["O1002", "Bob Example", "unknown@example.com", "25.5", "2026-09-02", "US"],
+    ["O1003", "Cara Example", "cara@example.com", "9.99", "2026-09-03", "AU"],
+    ["O1004", "Unknown", "dee@example.com", "75", "2026-09-04", "NZ"],
+    ["O1009", "Hal Example", "hal@example.com", "499.95", "2026-09-05", "US"],
+    ["O1010", "Ivy Example", "ivy@example.com", "12.3", "2026-09-06", "AU"]
+  ]
+}

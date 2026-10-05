@@ -1,0 +1,7 @@
+order_id,customer_name,email,amount,order_date,country
+O1001,Alice Example,alice@example.com,120.0,2026-09-01,AU
+O1002,Bob Example,unknown@example.com,25.5,2026-09-02,US
+O1003,Cara Example,cara@example.com,9.99,2026-09-03,AU
+O1004,Unknown,dee@example.com,75.0,2026-09-04,NZ
+O1009,Hal Example,hal@example.com,499.95,2026-09-05,US
+O1010,Ivy Example,ivy@example.com,12.3,2026-09-06,AU

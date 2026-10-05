@@ -1,0 +1,63 @@
+{
+  "scenario": "schema-drop-column",
+  "scope": "file validation; cloud provenance is verified separately",
+  "passed": false,
+  "source": {
+    "file": "artifacts\\source-staging\\schema-drop-column\\orders.csv",
+    "sha256": "ce15d21437d711eb389033fe0571f531c1db62e2b409653b9224d3f3b6a4a5a1",
+    "rows": 12
+  },
+  "reference_sha256": "e3c658fb950f660f4708c18368dc84cbfaf7e75da71cc6968bdac7577d7de020",
+  "outputs": [],
+  "oracle": {
+    "accepted": null,
+    "rejected": [],
+    "duplicates": [],
+    "missing_columns": [
+      "email"
+    ]
+  },
+  "semantic_signals": [],
+  "checks": [
+    {
+      "check": "source_fixture_identity",
+      "passed": true,
+      "note": "Actual S3 snapshot must match the named controlled experiment."
+    },
+    {
+      "check": "source_schema",
+      "passed": false,
+      "expected": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ],
+      "actual": [
+        "order_id",
+        "customer_name",
+        "amount",
+        "order_date",
+        "country"
+      ]
+    },
+    {
+      "check": "outputs_present",
+      "passed": false,
+      "actual": 0
+    },
+    {
+      "check": "determinism_sample_count",
+      "passed": false,
+      "required": 3,
+      "actual": 0
+    },
+    {
+      "check": "determinism_content",
+      "passed": false,
+      "note": "Need at least two valid output CSVs; use three independent runs."
+    }
+  ]
+}

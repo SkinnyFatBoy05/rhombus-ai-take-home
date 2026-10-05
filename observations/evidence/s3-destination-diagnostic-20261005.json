@@ -1,0 +1,146 @@
+{
+  "observed_date": "2026-10-05",
+  "timezone": "Australia/Sydney",
+  "workflow": "https://rhombusai.com/workflow/0",
+  "bucket": "rhombus-assessment-example",
+  "region": "ap-southeast-2",
+  "iam_identity_status": "active",
+  "credentials": "Candidate-created existing key explicitly authorized for Rhombus; identifiers and secret omitted",
+  "rhombus_connection_attempts": 3,
+  "rhombus_error": "Access denied to S3 bucket. Please verify your AWS credentials have the necessary permissions.",
+  "direct_aws_diagnostics": [
+    {
+      "operation": "GetBucketLocation",
+      "http_status": 200
+    },
+    {
+      "operation": "ListObjectsV2",
+      "prefix": "output/",
+      "max_keys": 1,
+      "http_status": 200
+    },
+    {
+      "operation": "PutObject",
+      "key": "output/connection-check-20261005.txt",
+      "http_status": 200,
+      "content_description": "Tiny synthetic connectivity marker, explicitly not a Rhombus export",
+      "rhombus_export": false
+    }
+  ],
+  "conclusion": "Destination connected, actual export failed in both exact-file and temporary diagnostic trials. Cause remains unresolved; broad permission was removed after each trial.",
+  "unproven_hypothesis": "The actual export may use a different object key or operation; provider exception and attempted key are not exposed. Do not assert the cause.",
+  "temporary_broader_policy": "Explicitly approved, applied for one connection attempt, then restored before 15:15 expiry",
+  "s3_pipeline_export_verified": false,
+  "scheduled_run_verified": false,
+  "google_cloud_used": false,
+  "connection_probe": {
+    "key": "rhombus-ai-write-permission-test-file-redacted-evidence-id-024.tmp",
+    "bytes": 103,
+    "last_modified": "2026-10-05T03:55:19Z",
+    "source": "AWS console object inventory",
+    "rhombus_pipeline_export": false
+  },
+  "filename_ui": {
+    "folder_rejected": true,
+    "rejected_value": "output/orders-clean",
+    "accepted_value": "orders-clean",
+    "format": "csv"
+  },
+  "current_permission": {
+    "put_object": "orders-clean.csv",
+    "expires": "2026-10-05T07:30:00Z",
+    "approved_and_applied": true,
+    "get_object": "orders-clean.csv only; candidate-approved and applied after voucher redemption",
+    "delete_granted": false
+  },
+  "manual_export_attempts": [
+    {
+      "started_sydney": "2026-10-05T14:56:27+11:00",
+      "ended_sydney": "2026-10-05T14:56:30+11:00",
+      "scope": "output/*",
+      "result": "orders_output failed; contradictory completed-successfully log"
+    },
+    {
+      "started_sydney": "2026-10-05T15:01:37+11:00",
+      "ended_sydney": "2026-10-05T15:01:39+11:00",
+      "scope": "orders-clean.csv",
+      "result": "orders_output failed; contradictory completed-successfully log"
+    },
+    {
+      "started_sydney": "2026-10-05T15:08:07+11:00",
+      "ended_sydney": "2026-10-05T15:08:10+11:00",
+      "scope": "One explicitly approved temporary PutObject test across the dedicated bucket excluding input/",
+      "result": "orders_output failed; contradictory completed-successfully log; no new CSV",
+      "scope_restored": true,
+      "propagation_verified": false
+    },
+    {
+      "started_sydney": "2026-10-05T15:18:56+11:00",
+      "ended_sydney": "2026-10-05T15:19:00+11:00",
+      "job_id": "redacted-evidence-id-025",
+      "scope": "Exact-file PutObject, credits restored",
+      "result": "Input, cleaning and sort completed; output failed"
+    },
+    {
+      "started_sydney": "2026-10-05T15:22:21+11:00",
+      "ended_sydney": "2026-10-05T15:22:23+11:00",
+      "scope": "Exact-file GetObject and PutObject, credits restored",
+      "result": "Output failed; contradictory completed-successfully log"
+    },
+    {
+      "job_id": "redacted-evidence-id-028",
+      "scope": "Exact-file GetObject and PutObject; new output_node_2",
+      "result": "Upstream completed with six rows; rebuilt output failed with the same generic error",
+      "provider_error": "Failed to write the pipeline output to the configured destination. Check the destination permissions and try again."
+    }
+  ],
+  "diagnostic_assistant": {
+    "persisted_params": {
+      "destination_id": 0,
+      "format_type": "csv",
+      "custom_filename": "orders-clean",
+      "download_local": false
+    },
+    "exact_provider_error_available": false,
+    "exact_attempted_key_available": false,
+    "historical_job_id_available": false,
+    "pipeline_changed": false,
+    "remaining_credits": 0
+  },
+  "final_scope": "GetObject and PutObject only on orders-clean.csv; bucket location/list; expiry 2026-10-05T07:30:00Z",
+  "schedule_test": {
+    "cron": "*/5 * * * *",
+    "due_sydney": "2026-10-05T15:05:00+11:00",
+    "before": "No results",
+    "after_due_and_reload": "No results",
+    "s3_output_present": false,
+    "both_schedules_final": "inactive",
+    "failure_notifications": false,
+    "credits_during_test": 0,
+    "limitation": "Zero credits may affect scheduling; earlier failures also happened with credits present."
+  },
+  "credits_restored_on_oct5": 5000,
+  "post_redemption_job": {
+    "id": "redacted-evidence-id-025",
+    "source": "Rhombus built-in assistant run_pipeline result",
+    "input": "completed",
+    "cleaning": "completed",
+    "sort": "completed",
+    "output": "error",
+    "provider_exception_exposed": false,
+    "attempted_key_exposed": false
+  },
+  "additional_documentation": {
+    "url": "https://doc.rhombusai.com/docs/Integrations/aws-s3-connection/",
+    "observed_actions": [
+      "s3:GetBucketLocation",
+      "s3:GetObject",
+      "s3:ListBucket",
+      "s3:PutObject"
+    ],
+    "difference": "Candidate approved GetObject only on orders-clean.csv. Applied; the 15:22:21-23 manual retest still failed."
+  },
+  "current_output_node": "output_node_2",
+  "credits_last_observed": 4980,
+  "remaining_cause": "Unresolved. Rebuilding the node and adding exact-file read did not repair export; no exact provider operation/key is exposed."
+}

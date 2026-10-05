@@ -1,0 +1,17 @@
+node_modules/
+.venv/
+__pycache__/
+.pytest_cache/
+.auth/
+.env
+.env.*
+!.env.example
+config/live.json
+artifacts/
+playwright-report/
+test-results/
+*.har
+*credentials*.json
+*service-account*.json
+
+*.proposed.json

@@ -1,0 +1,13 @@
+{
+  "evidence_type": "downloaded_s3_version",
+  "bucket": "rhombus-assessment-example",
+  "key": "input/orders.csv",
+  "region": "ap-southeast-2",
+  "version_id": "redacted-evidence-id-019",
+  "last_modified": "2026-09-30T08:23:33Z",
+  "bytes": 669,
+  "sha256": "d5f9f82943409090cd1fb3382d6f4aef32e8bb94c4848aa77f152e432f487c41",
+  "matches_fixture": "datasets/baseline.csv",
+  "local_ignored_snapshot": "artifacts/baseline/source/input.csv",
+  "method": "AWS console Versions tab: selected exact version, downloaded, then independently computed SHA-256"
+}

@@ -1,0 +1,116 @@
+{
+  "scenario": "semantic-cents",
+  "scope": "Rendered output-node preview only; supplementary evidence",
+  "business_preview_passed": false,
+  "csv_bytes_verified": false,
+  "scheduled_run_verified": false,
+  "determinism_verified": false,
+  "checks": [
+    {
+      "check": "preview_schema",
+      "passed": true
+    },
+    {
+      "check": "preview_row_count",
+      "passed": false,
+      "expected": 6,
+      "actual": 4
+    },
+    {
+      "check": "preview_unique_ids",
+      "passed": true
+    },
+    {
+      "check": "preview_sorted_ids",
+      "passed": true
+    },
+    {
+      "check": "preview_business_values",
+      "passed": false,
+      "missing_rows": [
+        [
+          "O1001",
+          "Alice Example",
+          "alice@example.com",
+          "120.00",
+          "2026-09-01",
+          "AU"
+        ],
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "25.50",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1003",
+          "Cara Example",
+          "cara@example.com",
+          "9.99",
+          "2026-09-03",
+          "AU"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "75.00",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1009",
+          "Hal Example",
+          "hal@example.com",
+          "499.95",
+          "2026-09-05",
+          "US"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "12.30",
+          "2026-09-06",
+          "AU"
+        ]
+      ],
+      "unexpected_rows": [
+        [
+          "O1002",
+          "Bob Example",
+          "unknown@example.com",
+          "2550",
+          "2026-09-02",
+          "US"
+        ],
+        [
+          "O1003",
+          "Cara Example",
+          "cara@example.com",
+          "999",
+          "2026-09-03",
+          "AU"
+        ],
+        [
+          "O1004",
+          "Unknown",
+          "dee@example.com",
+          "7500",
+          "2026-09-04",
+          "NZ"
+        ],
+        [
+          "O1010",
+          "Ivy Example",
+          "ivy@example.com",
+          "1230",
+          "2026-09-06",
+          "AU"
+        ]
+      ]
+    }
+  ]
+}

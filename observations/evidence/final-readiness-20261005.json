@@ -1,0 +1,22 @@
+{
+  "ready": false,
+  "gaps": [
+    "Original GCS requirement unmet; destination substitution has no confirmed employer exception",
+    "baseline: blocked_schedule_and_output_format",
+    "ui_journey: implemented_cli_auth_missing_manual_chrome_verified",
+    "schema-drop-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-rename-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-change-type: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-add-column: manual_verified_scheduled_and_export_evidence_missing",
+    "schema-combined: manual_verified_scheduled_and_export_evidence_missing",
+    "semantic-cents: manual_verified_scheduled_and_export_evidence_missing",
+    "semantic-date-order: manual_verified_scheduled_and_export_evidence_missing",
+    "Demo video link missing or not complete"
+  ],
+  "local_package_checks": {
+    "markdown_targets_missing": [],
+    "json_errors": [],
+    "credential_pattern_hits": []
+  },
+  "limitation": "Local preparation and supervised manual evidence do not complete the original scheduled GCS acceptance."
+}

@@ -1,0 +1,15 @@
+{
+  "projectUrl": "https://rhombusai.com/workflow/0",
+  "projectName": "Rhombus Take-Home - Kishore - 2026-09-30",
+  "projectConfirmed": false,
+  "storageState": ".auth/rhombus.json",
+  "sourceName": "assessment-orders-s3",
+  "s3Bucket": "rhombus-assessment-example",
+  "s3RegionLabel": "Asia Pacific (Sydney) (ap-southeast-2)",
+  "sourcePrefix": "input/",
+  "sourceObject": "input/orders.csv",
+  "destinationProvider": "local_download",
+  "builderPrompt": "docs/ai-builder-prompt.txt",
+  "sourceSnapshot": "artifacts/baseline/source/input.csv",
+  "scheduleCron": "*/5 * * * *"
+}

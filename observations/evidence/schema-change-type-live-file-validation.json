@@ -1,0 +1,150 @@
+{
+  "scenario": "schema-change-type",
+  "scope": "file validation; cloud provenance is verified separately",
+  "passed": false,
+  "source": {
+    "file": "artifacts\\source-staging\\schema-change-type\\orders.csv",
+    "sha256": "d50fd4e8414289a7fe96641b313abaa3b57232677528e2462848b4a140d9e96f",
+    "rows": 12
+  },
+  "reference_sha256": "e3c658fb950f660f4708c18368dc84cbfaf7e75da71cc6968bdac7577d7de020",
+  "outputs": [],
+  "oracle": {
+    "accepted": 0,
+    "rejected": [
+      {
+        "line": 2,
+        "order_id": "O1001",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 3,
+        "order_id": "O1002",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 4,
+        "order_id": "O1002",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 5,
+        "order_id": "O1003",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 6,
+        "order_id": "O1004",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 7,
+        "order_id": "O1005",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 8,
+        "order_id": "O1006",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 9,
+        "order_id": "",
+        "reasons": [
+          "missing_order_id",
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 10,
+        "order_id": "O1007",
+        "reasons": [
+          "invalid_amount",
+          "invalid_date"
+        ]
+      },
+      {
+        "line": 11,
+        "order_id": "O1008",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 12,
+        "order_id": "O1009",
+        "reasons": [
+          "invalid_amount"
+        ]
+      },
+      {
+        "line": 13,
+        "order_id": "O1010",
+        "reasons": [
+          "invalid_amount"
+        ]
+      }
+    ],
+    "duplicates": [],
+    "missing_columns": []
+  },
+  "semantic_signals": [],
+  "checks": [
+    {
+      "check": "source_fixture_identity",
+      "passed": true,
+      "note": "Actual S3 snapshot must match the named controlled experiment."
+    },
+    {
+      "check": "source_schema",
+      "passed": true,
+      "expected": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ],
+      "actual": [
+        "order_id",
+        "customer_name",
+        "email",
+        "amount",
+        "order_date",
+        "country"
+      ]
+    },
+    {
+      "check": "outputs_present",
+      "passed": false,
+      "actual": 0
+    },
+    {
+      "check": "determinism_sample_count",
+      "passed": false,
+      "required": 3,
+      "actual": 0
+    },
+    {
+      "check": "determinism_content",
+      "passed": false,
+      "note": "Need at least two valid output CSVs; use three independent runs."
+    }
+  ],
+  "evidence_limitation": "Uploaded fixture bytes are known and AWS object version is recorded separately. No actual output CSV was captured for this live case; preview observations are validated separately."
+}

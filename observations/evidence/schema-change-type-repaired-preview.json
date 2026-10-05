@@ -1,0 +1,64 @@
+{
+  "scenario": "schema-change-type",
+  "capture_method": "Fresh output-node Preview after full page reload following manual run 02:15:17-02:15:21 UTC",
+  "source_version_id": "redacted-evidence-id-015",
+  "columns": [
+    "order_id",
+    "customer_name",
+    "email",
+    "amount",
+    "order_date",
+    "country"
+  ],
+  "rows": [
+    {
+      "order_id": "O1001",
+      "customer_name": "Alice Example",
+      "email": "alice@example.com",
+      "amount": "120",
+      "order_date": "2026-09-01",
+      "country": "AU"
+    },
+    {
+      "order_id": "O1002",
+      "customer_name": "Bob Example",
+      "email": "unknown@example.com",
+      "amount": "25.5",
+      "order_date": "2026-09-02",
+      "country": "US"
+    },
+    {
+      "order_id": "O1003",
+      "customer_name": "Cara Example",
+      "email": "cara@example.com",
+      "amount": "9.99",
+      "order_date": "2026-09-03",
+      "country": "AU"
+    },
+    {
+      "order_id": "O1004",
+      "customer_name": "Unknown",
+      "email": "dee@example.com",
+      "amount": "75",
+      "order_date": "2026-09-04",
+      "country": "NZ"
+    },
+    {
+      "order_id": "O1009",
+      "customer_name": "Hal Example",
+      "email": "hal@example.com",
+      "amount": "499.95",
+      "order_date": "2026-09-05",
+      "country": "US"
+    },
+    {
+      "order_id": "O1010",
+      "customer_name": "Ivy Example",
+      "email": "ivy@example.com",
+      "amount": "12.3",
+      "order_date": "2026-09-06",
+      "country": "AU"
+    }
+  ],
+  "pipeline_saved_version": "redacted-evidence-id-009"
+}
